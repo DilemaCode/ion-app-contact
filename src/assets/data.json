@@ -1,0 +1,25 @@
+[{
+    "firstname": "Juan",
+    "lastname": "Perez",
+    "data": [{
+            "type": "phone",
+            "value": 8291111111
+        },
+        {
+            "type": "email",
+            "value": "j.perez@mail.com"
+        }
+    ]
+}, {
+    "firstname": "Albert",
+    "lastname": "Rosa",
+    "data": [{
+            "type": "phone",
+            "value": 8293333333
+        },
+        {
+            "type": "phone",
+            "value": 8292222222
+        }
+    ]
+}]

@@ -7,6 +7,11 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
+    path: 'ContactView/:id',
+    loadChildren: () => import('./contact/contact-view/contact-view.module').then( m => m.ContactViewModule)
+  },
+
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'

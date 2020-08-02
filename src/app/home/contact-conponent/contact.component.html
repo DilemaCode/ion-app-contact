@@ -1,0 +1,26 @@
+<ion-item-sliding #item>
+    <!-- <ion-item>
+      Item
+    </ion-item>
+    <ion-item-options side="left">
+      <button ion-button (click)="favorite(item)">Favorite</button>
+      <button ion-button color="danger" (click)="share(item)">Share</button>
+    </ion-item-options>
+
+    <ion-item-options side="right">
+      <button ion-button (click)="unread(item)">Unread</button>
+    </ion-item-options> -->
+    <ion-item *ngFor="let contact of contacts; let i = index" button (click)="goToContact(i)">
+        <ion-col size="12">
+            <ion-label>{{ contact.firstname }} {{ contact.lastname }}</ion-label>
+            <!-- <ion-label size="small">{{ contact.data[0].value }}</ion-label> -->
+        </ion-col>
+    </ion-item>
+    <ion-item-options side="end">
+        <button ion-button (click)="archive(item)">
+            <ion-icon name="archive"></ion-icon>
+            Archive
+          </button>
+        <!-- <button ion-button color="danger" (click)="share(item)">Share</button> -->
+    </ion-item-options>
+</ion-item-sliding>

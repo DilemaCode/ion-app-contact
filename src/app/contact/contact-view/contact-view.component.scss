@@ -1,0 +1,25 @@
+.profile-img {
+    width: 150px;
+    height: 150px;
+}
+
+.profile-img-divider {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+}
+
+.name {
+    font-size: 24px;
+    font-weight: 700;
+    color: #444
+}
+
+.contact-value {
+    // font-size: 1px;
+    text-align: end;
+    font-weight: 700;
+    color: #444
+}

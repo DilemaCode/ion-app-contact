@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
-
+  constructor() { }
+  addContact() {
+    console.log(window.localStorage)
+  }
 }
