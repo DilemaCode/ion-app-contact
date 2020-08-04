@@ -22,4 +22,20 @@
             "value": 8292222222
         }
     ]
+}, {
+    "firstname": "Maria",
+    "lastname": "Paredes",
+    "data": [{
+            "type": "phone",
+            "value": 8294444444
+        },
+        {
+            "type": "phone",
+            "value": 8295555555
+        },
+        {
+            "type": "email",
+            "value": "mariasgates25@mail.com"
+        }
+    ]
 }]

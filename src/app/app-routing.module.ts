@@ -6,11 +6,15 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
+  
   {
     path: 'ContactView/:id',
     loadChildren: () => import('./contact/contact-view/contact-view.module').then( m => m.ContactViewModule)
   },
-
+  {
+    path: 'form',
+    loadChildren: () => import('./contact/add-contact/add-contact.module').then( m => m.AddContactPageModule)
+  },
   {
     path: '',
     redirectTo: 'home',

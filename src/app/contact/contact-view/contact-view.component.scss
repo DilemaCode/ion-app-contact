@@ -6,9 +6,10 @@
 .profile-img-divider {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    // justify-content: center;
     align-items: center;
-    height: 40vh;
+    height: 30vh;
+    margin-bottom: 10px;
 }
 
 .name {
@@ -18,8 +19,17 @@
 }
 
 .contact-value {
-    // font-size: 1px;
-    text-align: end;
-    font-weight: 700;
-    color: #444
+    --highlight-color-focused: #dedede;
+}
+
+toolbar {
+    --background: transparent
+}
+
+ion-item>ion-label {
+    text-transform: capitalize!important;
+}
+
+ion-item.item-has-focus>ion-label {
+    color: #555 !important;
 }

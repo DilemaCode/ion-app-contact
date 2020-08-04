@@ -1,4 +1,4 @@
-<ion-header>
+<!-- <ion-header>
     <ion-toolbar>
         <ion-buttons slot="start">
             <ion-back-button defaultHref="home"></ion-back-button>
@@ -11,9 +11,21 @@
             </ion-button>
         </ion-buttons>
     </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
 <ion-content [fullscreen]="true">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="home"></ion-back-button>
+        </ion-buttons>
+        <ion-title>
+        </ion-title>
+        <ion-buttons slot="end" *ngIf="!isEditing">
+            <ion-button (click)="goToEdit()">
+                <ion-icon slot="start" name="pencil"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
     <app-form-component *ngIf="isEditing"></app-form-component>
     <ion-item-group *ngIf="!isEditing">
         <div class="profile-img-divider">
@@ -21,9 +33,10 @@
             <ion-label *ngIf="contact" class="name">{{contact.firstname}} {{contact.lastname}}</ion-label>
         </div>
         <ion-list *ngIf="contact">
-            <ion-item *ngFor="let data of contact.data; let i=index">
-                <ion-label>{{data.type}} {{i!=0?"("+(i+1)+")":""}}: </ion-label>
-                <ion-label class="contact-value">{{data.value}}</ion-label>
+            <ion-item *ngFor="let data of contact.data; let i=index" class="contact-value">
+                <ion-label position="floating">{{data.type}} {{data.type=="phone"&&i!=0 ? "(" +(i+1) + ")":"" }} </ion-label>
+                <ion-input readonly value={{data.value}} type="text"></ion-input>
+                <!-- <ion-label class="contact-value1">{{data.value}}</ion-label> -->
             </ion-item>
         </ion-list>
     </ion-item-group>

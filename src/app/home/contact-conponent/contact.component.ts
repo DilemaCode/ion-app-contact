@@ -12,7 +12,7 @@ export class ContactComponent implements OnInit {
   constructor(private ds: DS, private router: Router) { }
 
   ngOnInit() {
-    this.ds.getContacts().subscribe((data: Contact[]) => {
+    this.ds.getContacts().then((data: Contact[]) => {
       console.log(data);
       this.contacts = data;
     });
