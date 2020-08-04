@@ -9,7 +9,9 @@ import { Router } from '@angular/router';
 })
 export class ContactComponent implements OnInit {
   contacts = [];
-  constructor(private ds: DS, private router: Router) { }
+  constructor(private ds: DS, private router: Router) {
+
+  }
 
   ngOnInit() {
     this.ds.getContacts().then((data: Contact[]) => {
@@ -17,6 +19,7 @@ export class ContactComponent implements OnInit {
       this.contacts = data;
     });
   }
+
   goToContact(id: number) {
     this.router.navigate(["/ContactView/" + id])
   }

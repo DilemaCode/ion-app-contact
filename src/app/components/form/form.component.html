@@ -26,7 +26,7 @@
     </ion-button>
 
     <div formArrayName="data">
-        <ion-item formGroupName="1">
+        <ion-item formGroupName={{getEmailIndex()}}>
             <ion-label position="floating">E-Mail
             </ion-label>
             <ion-input formControlName="value" type="text"></ion-input>

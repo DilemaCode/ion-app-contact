@@ -1,32 +1,22 @@
-<!-- <ion-header>
-    <ion-toolbar>
-        <ion-buttons slot="start">
-            <ion-back-button defaultHref="home"></ion-back-button>
-        </ion-buttons>
-        <ion-title>
-        </ion-title>
-        <ion-buttons slot="end" *ngIf="!isEditing">
-            <ion-button (click)="goToEdit()">
-                <ion-icon slot="start" name="pencil"></ion-icon>
-            </ion-button>
-        </ion-buttons>
-    </ion-toolbar>
-</ion-header> -->
-
 <ion-content [fullscreen]="true">
     <ion-toolbar>
         <ion-buttons slot="start">
-            <ion-back-button defaultHref="home"></ion-back-button>
+            <ion-back-button *ngIf="!isEditing" defaultHref="home"></ion-back-button>
+            <ion-buttons slot="start" *ngIf="isEditing">
+                <ion-button (click)="go('view')">
+                    <ion-icon slot="start" name="arrow-back"></ion-icon>
+                </ion-button>
+            </ion-buttons>
         </ion-buttons>
-        <ion-title>
+        <ion-title *ngIf="isEditing">Edit Contact
         </ion-title>
         <ion-buttons slot="end" *ngIf="!isEditing">
-            <ion-button (click)="goToEdit()">
+            <ion-button (click)="go('edit')">
                 <ion-icon slot="start" name="pencil"></ion-icon>
             </ion-button>
         </ion-buttons>
     </ion-toolbar>
-    <app-form-component *ngIf="isEditing"></app-form-component>
+    <app-form-component [contact]="contact" (submit)="editContact($event)" *ngIf="isEditing"></app-form-component>
     <ion-item-group *ngIf="!isEditing">
         <div class="profile-img-divider">
             <ion-icon class="profile-img" color="medium" name="person-circle-outline"></ion-icon>

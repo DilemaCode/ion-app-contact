@@ -7,9 +7,9 @@ export interface ContactData {
 }
 
 export interface Contact {
-    firstname?: string;
-    lastname?: string;
-    contact?: Array<ContactData>;
+    firstname: string;
+    lastname: string;
+    data: Array<ContactData>;
 }
 
 @Injectable({
@@ -51,6 +51,23 @@ export class DS {
         localStorage.setItem("contacts", JSON.stringify(contacts));
         return "ok"
         // this.storage.setItem('contacts', JSON.stringify(contact));
+    }
+
+    async editContact(id: number, contact: Contact) {
+
+        var contacts = [];
+        if (localStorage.getItem("contacts") != undefined) {
+            contacts = JSON.parse(localStorage.getItem("contacts"));
+        }
+        contacts.map((data: Contact, i) => {
+            if (i == id) {
+                contacts[i] = contact
+            }
+        })
+        localStorage.setItem("contacts", JSON.stringify(contacts));
+        
+        return "ok";
+
     }
 
 
